@@ -5,8 +5,8 @@
 	<title>Espilon</title>
 	<meta name="description" content="Epsilon">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-	<link rel="stylesheet" href="epsilon.css">
+    <link rel="stylesheet" href="../front/background.css">
+    <link rel="stylesheet" href="../front/style.css">
 	<link href="assets/css/all.css" rel="stylesheet">
 	<link href="assets/css/fontawesome.css" rel="stylesheet">
 	<link href="assets/css/brands.css" rel="stylesheet">
@@ -24,9 +24,11 @@
     </style>
 </head>
 <body>
-
-<div class="container">
-    <header>
+<div id="background">
+        <div id="stars"></div><div id="stars2"></div><div id="stars3"></div>
+    </div>
+<div class="container" style="position:relative">
+<header style="position:absolute; top: 0; left: 0; ">
         <nav>
             <ul id="connection">
                 <li id="signin">
@@ -36,11 +38,12 @@
         </nav>
         <div class="cleared"></div>
 
-        <h1>Inscription</h1>
     </header>
 
-    <section>
-        <form action="userRegistrationForm-validation.php" method="post">
+    <section style="display:flex; justify-content:center; align-items: center; flex-direction:column; height:auto;">
+    <h1>Inscription</h1>
+    
+    <form action="userRegistrationForm-validation.php" method="post">
             <table>
                 <tr>
                     <td class="label">Mail</td>

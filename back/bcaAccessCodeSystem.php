@@ -132,10 +132,10 @@ function numberToRankNamed($numberFromArray){
 
 function displayCoursesList($accessCodeArrayed){
 	global $course0, $course1, $course2, $course3;
-	echo '<ul id="parcours-list">
-		<li><strong>'.$course0.' : </strong>'.numberToRankNamed($accessCodeArrayed[0]).displayCourseLink(0,$accessCodeArrayed).' <span class="see"><i class="fas fa-eye"></i> Voir</span></li>';
-echo '<li><strong>'.$course1.' : </strong>'.numberToRankNamed($accessCodeArrayed[1]).displayCourseLink(1,$accessCodeArrayed).' <span class="see"><i class="fas fa-eye"></i> Voir</span></li>';
-echo '<li><strong>'.$course2.' : </strong>'.numberToRankNamed($accessCodeArrayed[2]).displayCourseLink(2,$accessCodeArrayed).' <span class="see"><i class="fas fa-eye"></i> Voir</span></li>';
-echo '<li><strong>'.$course3.' : </strong>'.numberToRankNamed($accessCodeArrayed[3]).displayCourseLink(3,$accessCodeArrayed).' <span class="see"><i class="fas fa-eye"></i> Voir</span></li>
+	echo '<ul id="inside">
+		<li class="square"><strong>'.$course0.' : </strong>'.numberToRankNamed($accessCodeArrayed[0]).displayCourseLink(0,$accessCodeArrayed).' <span class="see"><i class="fas fa-eye"></i> Voir</span></li>';
+echo '<li class="square"><strong>'.$course1.' : </strong>'.numberToRankNamed($accessCodeArrayed[1]).displayCourseLink(1,$accessCodeArrayed).' <span class="see"><i class="fas fa-eye"></i> Voir</span></li>';
+echo '<li class="square"><strong>'.$course2.' : </strong>'.numberToRankNamed($accessCodeArrayed[2]).displayCourseLink(2,$accessCodeArrayed).' <span class="see"><i class="fas fa-eye"></i> Voir</span></li>';
+echo '<li class="square"><strong>'.$course3.' : </strong>'.numberToRankNamed($accessCodeArrayed[3]).displayCourseLink(3,$accessCodeArrayed).' <span class="see"><i class="fas fa-eye"></i> Voir</span></li>
 	</ul>';
 }

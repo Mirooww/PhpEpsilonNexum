@@ -31,22 +31,22 @@ if(isset($_POST["valid"])){
                 $return = 'Nous vous avons envoyé un mail à cette adresse pour renouveller votre mot de passe';	
             }
             
-            // if(password_verify($_POST["bca-pwd"],$result['password'])){
-            //     $return = "Connexion réussie";
-            //     // envoyer cookies ou session
-            //     if(isset($_POST['bca-stayIn'])){
-            //         $expire = 365*24*3600; // on définit la durée du cookie, 1 an
-            //         setcookie("mail",$mail,time()+$expire);  // on l'envoi
-            //     }
-            //     else{
-            //         session_start();
-            //         $_SESSION['mail'] = $mail;
-            //         echo 'ok'.$_SESSION['mail'];
-            //     }
-            // }
-            // else{
-            //     $return = '<span style="color:red">Mauvais mot de passe, <a href="userPasswordReset.php">réinitialisation du mot de passe</a>.</span>';
-            // }
+            if(password_verify($_POST["bca-pwd"],$result['password'])){
+                $return = "Connexion réussie";
+                // envoyer cookies ou session
+                if(isset($_POST['bca-stayIn'])){
+                    $expire = 365*24*3600; // on définit la durée du cookie, 1 an
+                    setcookie("mail",$mail,time()+$expire);  // on l'envoi
+                }
+                else{
+                    session_start();
+                    $_SESSION['mail'] = $mail;
+                    echo 'ok'.$_SESSION['mail'];
+                }
+            }
+            else{
+                $return = '<span style="color:red">Mauvais mot de passe, <a href="userPasswordReset.php">réinitialisation du mot de passe</a>.</span>';
+            }
         }
         else{
             $return = '<span style="color:red">Pas de mail correspondant</span>';
@@ -69,14 +69,15 @@ else{
 	<title>Espilon</title>
 	<meta name="description" content="Epsilon">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="epsilon.css">
-    <script src="https://kit.fontawesome.com/b30f5d3ef8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../front/background.css">
+    <link rel="stylesheet" href="../front/style.css">
 </head>
 <body>
-
+<div id="background">
+    <div id="stars"></div><div id="stars2"></div><div id="stars3"></div>
+</div>
 <div class="container">
-    <header>
+<header style="position:absolute; top: 0; left: 0; ">
         <nav>
             <ul id="connection">
                 <li id="signup">
@@ -86,10 +87,10 @@ else{
         </nav>
         <div class="cleared"></div>
 
-        <h1><?php echo $return ?></h1>
+        <h1 style="display:flex; justify-content:center; align-items: center; flex-direction:column;"><?php echo $return ?></h1>
     </header>
 
-    <section>
+    <section style="display:flex; justify-content:center; align-items: center; flex-direction:column;">
         <ul id="retour">
             <li id="return">
                 <a href="index.php">Retour</a></li>

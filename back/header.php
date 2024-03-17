@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Espilon</title>
-	<meta name="description" content="Plateforme de peer-learning de l'EPSI Lille">
+<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-	<link rel="stylesheet" href="epsilon.css">
+    <title>Epsilon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b30f5d3ef8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../front/background.css">
+    <link rel="stylesheet" href="../front/style.css">
+
 </head>
 <body>
 
@@ -23,7 +26,7 @@
             $id = isset($_COOKIE['mail']) ? $_COOKIE['mail'] : $_SESSION['mail'];
             echo'
             <nav>
-                <ul id="connection">
+                <ul id="connection" style="justify-content:space-around;   list-style-type: none; ">
                     <li id="signup">
                         <i class="fas fa-user"></i> '.$id.'
                     </li>

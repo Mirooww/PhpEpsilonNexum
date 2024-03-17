@@ -26,7 +26,7 @@ echo '<strong>Défi demandé</strong> : <u>'.$work[$_GET['course']][$_GET['chall
 <h2>Upload du travail</h2>
 
 <form action="bcaWorkUpload-validation.php?course=<?=$_GET['course']?>&challenge=<?=$_GET['challenge']?>" method="post" enctype="multipart/form-data">
-  Selectionnez un fichier à uploader:
+  Sélectionnez un fichier à uploader :
   <input type="file" name="fileToUpload" id="fileToUpload">
   <input type="hidden" name="course" value="<?=$_GET['course'] ?>">
   <input type="hidden" name="challenge" value="<?=$_GET['challenge'] ?>">

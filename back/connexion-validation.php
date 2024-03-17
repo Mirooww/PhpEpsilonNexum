@@ -46,16 +46,9 @@ else{
 	<title>Espilon</title>
 	<meta name="description" content="Epsilon">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-	<!-- <link rel="stylesheet" href="epsilon.css"> -->
-	<link href="assets/css/all.css" rel="stylesheet">
-	<link href="assets/css/fontawesome.css" rel="stylesheet">
-	<link href="assets/css/brands.css" rel="stylesheet">
-	<link href="assets/css/solid.css" rel="stylesheet">
-	<script defer src="assets/js/all.js"></script>
-	<script defer src="assets/js/brands.js"></script>
-	<script defer src="assets/js/solid.js"></script>
-	<script defer src="assets/js/fontawesome.js"></script>
+    <link rel="stylesheet" href="../front/background.css">
+    <link rel="stylesheet" href="../front/style.css">
+
     <style type="text/css">
         #retour{float: left;}
         #return>a{color: rgb(70, 114, 70); text-decoration: none;}
@@ -65,9 +58,11 @@ else{
     </style>
 </head>
 <body>
-
+<div id="background">
+        <div id="stars"></div><div id="stars2"></div><div id="stars3"></div>
+    </div>
 <div class="container">
-    <header>
+<header>
         <nav>
             <ul id="connection">
                 <li id="signup">
@@ -111,7 +106,7 @@ if ( $return != 'Connexion réussie' ) {
 
 ?>
 
-    <section>
+<section style="display:flex; justify-content:center; align-items: center; flex-direction:column;">
         <ul id="retour">
             <li id="return">
                 <a href="index.php">Retour</a></li>

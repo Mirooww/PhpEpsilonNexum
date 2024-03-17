@@ -43,22 +43,22 @@ if(isset($_POST["valid"])){
             $return = '<span style="color:red">Mail déjà inscrit</span>';
         }
 
-        // require_once('env.php');
-        // $mail = $_POST["bca-mail"];
-        // // verif si mail existe pas déjà
-        // $selectall = $db->query('SELECT * FROM user WHERE mail="'.$mail.'"');
-        // $result = $selectall->fetch();
-        // $counttable = count((is_countable($result)?$result:[]));
-        // // sinon, insertion en base
-        // if($counttable==0){
-        //     $res = $db->prepare('INSERT INTO user (mail,password) VALUES(:mail,:password)');
-        //     $pwd = password_hash($_POST['bca-pwd'],PASSWORD_DEFAULT);
-        //     $res->execute(array('mail' => $_POST["bca-mail"],'password' => $pwd));
-        //     $return = "Inscription validée, vous pouvez maintenant vous connecter !";
-        // }
-        // else{
-        //     $return = '<span style="color:red">Mail déjà inscrit</span>';
-        // }	
+        require_once('env.php');
+        $mail = $_POST["bca-mail"];
+        // verif si mail existe pas déjà
+        $selectall = $db->query('SELECT * FROM user WHERE mail="'.$mail.'"');
+        $result = $selectall->fetch();
+        $counttable = count((is_countable($result)?$result:[]));
+        // sinon, insertion en base
+        if($counttable==0){
+            $res = $db->prepare('INSERT INTO user (mail,password) VALUES(:mail,:password)');
+            $pwd = password_hash($_POST['bca-pwd'],PASSWORD_DEFAULT);
+            $res->execute(array('mail' => $_POST["bca-mail"],'password' => $pwd));
+            $return = "Inscription validée, vous pouvez maintenant vous connecter !";
+        }
+        else{
+            $return = '<span style="color:red">Mail déjà inscrit</span>';
+        }	
     }
 	else{
 		$return = '<span style="color:red">Veuillez préciser un mail</span>';
